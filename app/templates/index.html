@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101e33"><link rel="icon" href="data:,">
+  <title>Finance Helper</title><link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="Finance Helper home"><span class="brand-mark">F</span><span>finance<span class="brand-light">helper</span></span></a>
+    <div class="workspace-label"><i></i> FINANCIAL SERVICES</div>
+    <nav class="primary-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#overview"><span>⌂</span> Home</a>
+      <a class="nav-link" href="#workspace"><span>＋</span> New project</a>
+      <a class="nav-link" href="#knowledge"><span>▤</span> Source library</a>
+      <a class="nav-link" href="#requirements"><span>✓</span> Requirements</a>
+      <a class="nav-link" href="#quality"><span>◈</span> Quality review</a>
+      <a class="nav-link" href="#sdlc"><span>↗</span> Delivery approach</a>
+    </nav>
+    <div class="sidebar-note"><span>◆</span><div><b>Finance only</b><small>Unrelated projects are declined.</small></div></div>
+    <div class="sidebar-foot">FINANCE HELPER <i>•</i> LOCAL WORKSPACE</div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar">
+      <div><div class="breadcrumb">FINANCE HELPER <span>/</span> <b>WORKSPACE</b></div><h1>Your finance workspace</h1></div>
+      <div class="top-actions"><span class="environment-pill"><i></i> Local workspace</span><a id="artifactLink" class="button button-outline is-hidden" title="Download finance requirements pack" download>Download requirements</a><a id="exportLink" class="button button-outline is-hidden" title="Export finance project data" download>Export project</a><a id="newProject" class="button" href="#workspace">＋ New finance project</a></div>
+    </header>
+    <section id="overview" class="page-section overview-section">
+      <div class="hero">
+        <div class="hero-copy"><span class="hero-kicker">FINANCIAL SERVICES REQUIREMENTS</span><h2>Make finance workflows<br>clear from the start.</h2><p>Capture the business need, bring in your own source material, and create requirement drafts your team can review with confidence.</p><a id="heroNew" class="button button-light" href="#workspace">Create a finance project <span>→</span></a></div></div>
+      <div class="metric-grid">
+        <article class="metric-card"><span class="metric-icon blue">▦</span><div><small>Finance projects</small><strong id="projectMetric">0</strong></div><span>In this workspace</span></article>
+        <article class="metric-card"><span class="metric-icon green">✓</span><div><small>Draft requirements</small><strong id="requirementMetric">0</strong></div><span>Across your projects</span></article>
+        <article class="metric-card"><span class="metric-icon amber">◷</span><div><small>Awaiting review</small><strong id="approvalMetric">0</strong></div><span>Human review queue</span></article>
+      </div>
+      <div class="overview-grid">
+        <section class="surface-card portfolio-card"><div class="card-heading"><div><span class="eyebrow">YOUR WORKSPACE</span><h3>Recent finance projects</h3></div><span id="portfolioCount" class="count">0 projects</span></div><div id="projectList" class="project-list"><p class="empty-state">Loading your workspace…</p></div></section>
+        <aside class="welcome-card"><span class="eyebrow">A SIMPLE WORKFLOW</span><h3>From business need<br>to reviewed draft.</h3><ol><li><b>01</b><span><strong>Describe</strong><small>Explain the financial workflow.</small></span></li><li><b>02</b><span><strong>Ground</strong><small>Use your own source documents.</small></span></li><li><b>03</b><span><strong>Review</strong><small>Refine requirements with your team.</small></span></li></ol><div class="privacy-note">◆ Your sources stay in this local project workspace.</div></aside>
+      </div>
+      <div class="health-strip"><span class="health-indicator"></span><div><b>Finance evidence workspace</b><small id="knowledgeHealth">Checking local source index…</small></div><span>Private local mode</span></div>
+    </section>
+    <section id="workspace" class="page-section">
+      <div class="section-heading"><div><span class="eyebrow">01 / PROJECT INTAKE</span><h2 id="workspace-title">Start with your finance workflow.</h2><p id="workspaceDescription" class="muted">Finance Helper is for banking, payments, lending, insurance, investing, accounting, and financial services projects.</p></div><span id="projectState" class="state"><i></i> No project selected</span></div>
+      <form id="interviewStartForm" class="surface-card intake-form">
+        <div class="form-top"><span class="form-icon">₣</span><div><h3>Finance project basics</h3><p>We check that your project is related to finance before continuing.</p></div></div>
+        <div class="starter-grid"><label class="wide">Financial workflow or product<textarea id="functionality" rows="3" required minlength="3" placeholder="For example, consumer loan application and underwriting"></textarea></label><label>Business objective<textarea id="businessObjective" rows="3" required placeholder="What should the financial service help achieve?"></textarea></label><label>Users and roles<textarea id="usersRoles" rows="3" required placeholder="For example, applicants, loan officers, operations reviewers"></textarea></label></div>
+        <label class="upload-label">Your supporting documents <span class="muted">(optional)</span><input id="files" type="file" accept=".txt,.md,.csv,.pdf,.docx" multiple></label>
+        <details class="metadata-fields"><summary>Source details (optional)</summary><div class="metadata-grid"><label>Jurisdiction<input id="jurisdiction" placeholder="Country or region"></label><label>Effective date<input id="effectiveDate" type="date"></label><label>Version<input id="documentVersion" placeholder="Document version"></label><label>Applicability<input id="applicability" placeholder="Product, process, or scope"></label><label>Uploaded by<input id="uploadedBy" placeholder="Team or reviewer"></label></div></details>
+        <div id="financeGate" class="gate-message is-hidden" role="alert"></div><div class="form-footer"><span><b>Finance-only workspace</b><small>Projects outside financial services will be declined.</small></span><button class="button" type="submit">Continue to questions <span>→</span></button></div>
+      </form>
+      <section id="interviewSession" class="interview-session is-hidden" aria-live="polite"><div class="interview-meta"><span id="questionProgress" class="count"></span><span id="answerCount" class="muted">Maximum five follow-up questions</span></div><div class="progress"><i id="progressBar"></i></div><span id="questionTopic" class="eyebrow"></span><h3 id="interviewQuestion"></h3><label class="answer-label" for="interviewAnswer">Your response</label><textarea id="interviewAnswer" rows="5" placeholder="Describe the financial rule, threshold, data, or outcome."></textarea><div class="interview-actions"><button id="skipInterviewQuestion" type="button" class="button button-outline">Skip</button><button id="continueInterview" type="button" class="button">Save and continue →</button></div></section>
+      <section id="interviewComplete" class="interview-complete is-hidden"><span class="complete-mark">✓</span><div><span class="eyebrow">INTAKE COMPLETE</span><h3>Ready to create your finance workspace</h3><p id="interviewSummary" class="muted"></p></div><button id="createProject" type="button" class="button">Create finance project →</button></section>
+    </section>
+    <section id="knowledge" class="page-section">
+      <div class="section-heading"><div><span class="eyebrow">02 / YOUR SOURCES</span><h2>Source library</h2><p class="muted">Search your financial project material and inspect passages before drafting.</p></div><button id="generateButton" type="button" disabled class="button">Draft requirements →</button></div>
+      <div id="documentsPanel" class="surface-card evidence-library is-hidden"><div id="ragSummary" class="rag-summary"></div><div id="documentList" class="document-list"></div><div class="retrieval-toolbar"><label>Search your sources<input id="retrievalQuery" placeholder="Search a finance term or workflow"></label><button id="retrieveButton" class="button button-outline" type="button">Find evidence</button><span id="retrievalCount" class="count"></span></div><div id="evidenceNotice" class="evidence-notice is-hidden"></div><div id="retrievalResults" class="retrieval-results"><p class="empty-state">Add finance source material to get started.</p></div></div><div id="knowledgeEmpty" class="surface-card empty-state">Create a finance project to add your own financial source material.</div>
+    </section>
+    <section id="requirements" class="page-section">
+      <div class="section-heading"><div><span class="eyebrow">03 / EVIDENCE-GROUNDED DRAFTS</span><h2>Requirements</h2><p class="muted">Review requirement language and cited source material before sign-off.</p></div><span id="requirementCount" class="count">No requirements</span></div>
+      <div id="requirementFilters" class="requirement-filters is-hidden"><label>Category<select id="filterCategory"><option value="">All categories</option><option>Business</option><option>Stakeholder</option><option>Functional</option><option>Security</option><option>Privacy</option><option>Regulatory</option><option>Performance</option><option>Availability / reliability</option><option>Usability</option><option>Data management</option><option>Integration</option><option>Audit / reporting</option><option>Operational / maintenance</option></select></label><label>Priority<select id="filterPriority"><option value="">All priorities</option><option>Must</option><option>Should</option><option>Could</option></select></label><label>Review status<select id="filterApproval"><option value="">All states</option><option>Draft</option><option>Needs review</option><option>Approved</option><option>Rejected</option></select></label><label>Confidence<select id="filterConfidence"><option value="">Any confidence</option><option value="low">Below 50%</option><option value="medium">50–79%</option><option value="high">80% or higher</option></select></label></div>
+      <div id="requirementsPanel" class="requirements-list is-hidden"></div><div id="requirementsEmpty" class="surface-card empty-state">Generate finance requirements from your source evidence to begin review.</div>
+    </section>
+    <section id="quality" class="page-section">
+      <div class="section-heading"><div><span class="eyebrow">04 / DRAFT REVIEW</span><h2>Quality review</h2><p class="muted">Check requirement clarity, supporting evidence, and acceptance criteria.</p></div><span id="issueCount" class="count">No checks run</span></div><div id="qualityPanel" class="issues-list is-hidden"></div><div id="qualityEmpty" class="surface-card empty-state">Quality checks appear after requirement drafts are generated.</div>
+    </section>
+    <section id="sdlc" class="page-section">
+      <div class="section-heading"><div><span class="eyebrow">05 / DELIVERY PLANNING</span><h2>Delivery approach</h2><p class="muted">Compare delivery models and understand which factors shape the recommendation.</p></div><button id="sdlcButton" type="button" disabled class="button">Review delivery approach</button></div><div id="sdlcPanel" class="is-hidden"><div id="sdlcResult"></div></div><div id="sdlcEmpty" class="surface-card empty-state">Generate finance requirements before reviewing the delivery approach.</div>
+    </section>
+    <footer><span>FINANCE HELPER</span><span>For financial-services projects · Human review required</span></footer>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div><script src="/static/app.js"></script>
+</body></html>

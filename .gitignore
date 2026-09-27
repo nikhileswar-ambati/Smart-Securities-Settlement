@@ -1,0 +1,12 @@
+.venv/
+.tmp/
+__pycache__/
+.pytest_cache/
+data/chroma/
+data/*.json
+*.pyc
+.env
+.env.*
+!.env.example
+.DS_Store
+_incoming/
